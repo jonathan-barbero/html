@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
+    <title>Test Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -22,7 +22,7 @@ var map;
 
 function initialize() {
   var mapOptions = {
-    zoom: 6
+    zoom: 8
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -36,7 +36,7 @@ function initialize() {
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'Location found using HTML5.'
+        content: '¿Tú ubicación?'
       });
 
       map.setCenter(pos);
@@ -51,9 +51,9 @@ function initialize() {
 
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
+    var content = 'Error: La localización falla.';
   } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
+    var content = 'Error: El navegador no lo soporta.';
   }
 
   var options = {
